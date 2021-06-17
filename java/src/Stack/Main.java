@@ -42,6 +42,7 @@ public class Main {
         case "state":
           System.out.println("Stack state:");
           stack.state();
+          break;
         default:
           System.out.println("Invalid operation");
       }

@@ -8,12 +8,12 @@ public class Sum {
       System.out.println("Argument is missing!");
       return;
     }
-      
+
     for (String arg : args) {
       sum += Integer.parseInt(arg);
       System.out.printf("%s + ", arg);
     }
 
-    System.out.printf("\b\b= %d", sum);
+    System.out.printf("\b\b= %d\n", sum);
   }
 }

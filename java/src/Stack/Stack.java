@@ -45,9 +45,12 @@ public class Stack {
       System.out.println("Stack is empty");
       return;
     }
-    
-    for (int idx = 0; idx <= top; idx++) {
-      System.out.printf("%d, ", stack[idx]);
+
+    System.out.println("Stack Status:");
+    System.out.println("top");
+    for (int idx = top; idx > -1; idx--) {
+      System.out.println(stack[idx]);
     }
+    System.out.println("bottom");
   }
 }
