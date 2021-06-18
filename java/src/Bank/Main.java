@@ -68,14 +68,14 @@ public class Main {
         String city = Main.getUserInput("Enter customer city: ");
         String state = Main.getUserInput("Enter customer state: ");
         String country = Main.getUserInput("Enter customer country: ");
-        String pinCode = Main.getUserInput("Enter customer pinCode: ");
+        String pinCode = Main.getUserInput("Enter customer pin code: ");
         String email = Main.getUserInput("Enter customer email: ");
         String phone = Main.getUserInput("Enter customer phone: ");
 
-        // select the account type 
+        // select the account type
         System.out.println("Available account types:");
         System.out.println("1. Current Account");
-        System.out.println("1. Saving Account");
+        System.out.println("2. Saving Account");
         int type = Main.getUserInputInt("Select type of account you wanna create: ");
 
         // balance
@@ -83,11 +83,13 @@ public class Main {
 
         User user = new User(Main.latestUserAccountNumber, name, city, state, country, pinCode, email, phone);
 
-        accounts.add(new Account(Main.latestAccountNumber, type == 1 ? "current" : "saving", balance >= 0 ? balance : 0, user));
+        accounts.add(
+            new Account(Main.latestAccountNumber, type == 1 ? "current" : "saving", balance >= 0 ? balance : 0, user));
         Main.latestUserAccountNumber += 1;
         Main.latestAccountNumber += 1;
 
-        System.out.println(name + "'s account us created. new account number is: " + (Main.latestUserAccountNumber - 1));
+        System.out
+            .println(name + "'s account us created. new account number is: " + (Main.latestUserAccountNumber - 1));
         break;
       }
       case "checkBalance": {
@@ -133,7 +135,7 @@ public class Main {
 
         for (Account acc : accounts) {
           if (accNum == acc.getAccountNumber()) {
-            balance = acc.deposit(amount);
+            balance = acc.withdrawal(amount);
             System.out.println(amount + " is withdrawal, current balance is: " + balance);
             break;
           }
@@ -155,7 +157,7 @@ public class Main {
           break;
         }
 
-        double amount = Main.getUserInputDouble("Enter amount for deposit");
+        double amount = Main.getUserInputDouble("Enter amount for deposit: ");
         for (Account acc : accounts) {
           if (accNum == acc.getAccountNumber()) {
             double balance = acc.deposit(amount);
@@ -173,19 +175,19 @@ public class Main {
           break;
         }
 
-        // select the account type 
+        // select the account type
         System.out.println("Available User details update options:");
-        System.out.println("1. Change Name");
+        System.out.println("1. Change name");
         System.out.println("2. Change address line1");
         System.out.println("3. Change address line2");
         System.out.println("4. Change city");
         System.out.println("5. Change State");
-        System.out.println("6. Saving country");
-        System.out.println("7. Saving pinCode");
-        System.out.println("8. Saving identity type");
-        System.out.println("9. Saving identity document number");
-        System.out.println("10. Saving email");
-        System.out.println("11. Saving phone");
+        System.out.println("6. Change country");
+        System.out.println("7. Change pinCode");
+        System.out.println("8. Change identity type");
+        System.out.println("9. Change identity document number");
+        System.out.println("10. Change email");
+        System.out.println("11. Change phone");
         int op = Main.getUserInputInt("Enter the operation number: ");
         User selectedUser = Objects.requireNonNull(getAccount(accounts, accNum)).getUser();
         switch (op) {
@@ -256,6 +258,7 @@ public class Main {
             break;
           }
         }
+        break;
       }
       case "accounts": {
         if (accounts.size() <= 0) {
@@ -300,7 +303,9 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    ArrayList<Account> accounts = new ArrayList<Account>();
+    KolkataBranch kolkataBranch = new KolkataBranch();
+    
+    ArrayList<Account> accounts = kolkataBranch.getAccounts();
 
     boolean loop = true;
 
@@ -315,7 +320,7 @@ public class Main {
       System.out.println("6. check all account ");
       System.out.println("7. check account details ");
       System.out.println("8. exit ");
-      int option = getUserInputInt("Enter your option: ");
+      int option = getUserInputInt(">>>Enter your option: ");
       System.out.println(">>-----------------------------------------------------<<");
 
       switch (option) {
@@ -332,7 +337,13 @@ public class Main {
           operations(accounts, "deposit");
           break;
         case 5:
-          operations(accounts, "updateUser");
+          boolean updateLoop = true;
+          while (updateLoop) {
+            operations(accounts, "updateUser");
+            String ch = getUserInput("\nUpdate other field? [any key to continue or n|N to close]: ");
+            if (ch.length() >= 1 && ch.toLowerCase().charAt(0) == 'n')
+              updateLoop = false;
+          }
           break;
         case 6:
           operations(accounts, "accounts");
