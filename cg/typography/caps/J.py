@@ -12,14 +12,11 @@ def alphabat_u(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#
     canvas = Canvas(root, width=canvas_width,
                     height=canvas_height, background=canvas_bg)
 
-    canvas.create_line(small_side * 0.37, small_side*0.55,
-                       small_side*0.37, small_side*0.7, width=width, fill=outline)
+    canvas.create_line(small_side * 0.65, small_side*0.2,
+                       small_side*0.65, small_side*0.7, width=width, fill=outline)
 
-    canvas.create_line(small_side * 0.6, small_side*0.55,
-                       small_side*0.6, small_side*0.79, width=width, fill=outline)
-
-    canvas.create_arc(small_side * 0.37, small_side*0.55,
-                      small_side*0.6, small_side*0.8, start=180, extent=180, width=width, style="arc", outline=outline)
+    canvas.create_arc(small_side * 0.35, small_side*0.55,
+                      small_side*0.65, small_side*0.8, start=170, extent=185, width=width, style="arc", outline=outline)
     canvas.pack()
     root.mainloop()
 
