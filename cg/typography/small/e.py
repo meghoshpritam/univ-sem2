@@ -1,8 +1,6 @@
 # docs: https://tkdocs.com/tutorial/canvas.html
 from tkinter import Tk, Canvas, Label
 
-from click import style
-
 
 def alphabat_e(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#ffffff",
                outline="#E93B81", width=5):
