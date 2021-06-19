@@ -2,10 +2,10 @@
 from tkinter import Tk, Canvas, Label
 
 
-def alphabat_V(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#ffffff",
+def alphabat_M(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#ffffff",
                outline="#E93B81", width=5):
     root = Tk()
-    root.title('Alphabate - V')
+    root.title('Alphabate - M')
 
     small_side = canvas_height if canvas_height < canvas_width else canvas_width
 
@@ -29,4 +29,4 @@ def alphabat_V(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#
 
 
 if __name__ == "__main__":
-    alphabat_V()
+    alphabat_M()
