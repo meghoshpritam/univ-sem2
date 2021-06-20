@@ -12,8 +12,9 @@ def draw_triangle(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill
     canvas = Canvas(root, width=canvas_width,
                     height=canvas_height, background=canvas_bg)
 
-    canvas.create_polygon(small_side*0.5, small_side*0.2, small_side*0.8, small_side*0.8, small_side*0.2,
-                          small_side*0.8, fill=fill, outline=outline, width=square_width)
+    canvas.create_polygon(small_side*0.5, small_side*0.2, small_side*0.8, small_side*0.8,
+                          small_side*0.2, small_side*0.8, fill=fill, outline=outline,
+                          width=square_width)
 
     canvas.pack()
     root.mainloop()
