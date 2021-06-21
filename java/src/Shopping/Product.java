@@ -2,19 +2,22 @@ package Shopping;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.UUID;
 
 public class Product {
+  private final UUID id;
   private String name;
   private double price;
   private String description;
   private ArrayList<String> images;
 
   public Product(String name, double price, String description, String[] images) {
+    this.id = UUID.randomUUID();
     this.name = name;
     this.price = price;
     this.description = description;
     this.images = new ArrayList<String>();
-    
+
     this.images.addAll(Arrays.asList(images));
   }
 
@@ -24,6 +27,10 @@ public class Product {
 
   public Product(String name, double price, String description, String image) {
     this(name, price, description, new String[]{image});
+  }
+
+  public UUID getId() {
+    return id;
   }
 
   public String getName() {
@@ -43,6 +50,8 @@ public class Product {
   }
 
   public String getImage() {
+    if (this.images.size() < 1)
+      return "";
     return images.get(0);
   }
 

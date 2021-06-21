@@ -1,7 +1,5 @@
 package Shopping;
 
-import java.util.ArrayList;
-
 public class SmartPhone extends Mobile {
   private int ram;
   private String processor;
@@ -18,6 +16,26 @@ public class SmartPhone extends Mobile {
     this.core = core;
     this.screenType = screenType;
     this.operatingSystem = operatingSystem;
+  }
+
+  public int getRam() {
+    return ram;
+  }
+
+  public String getProcessor() {
+    return processor;
+  }
+
+  public int getCore() {
+    return core;
+  }
+
+  public String getScreenType() {
+    return screenType;
+  }
+
+  public String getOperatingSystem() {
+    return operatingSystem;
   }
 
   public void setRam(int ram) {

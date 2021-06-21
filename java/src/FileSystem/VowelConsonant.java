@@ -59,5 +59,6 @@ public class VowelConsonant {
     String source = scanner.nextLine();
     
     count(source);
+    scanner.close();
   }
 }
