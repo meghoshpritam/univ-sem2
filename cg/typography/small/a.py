@@ -13,16 +13,21 @@ def alphabat_a(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#
                     height=canvas_height, background=canvas_bg)
 
     canvas.create_arc(small_side * 0.38, small_side*0.2,
-                      small_side*0.801, small_side*0.6, start=10, extent=130, width=width, style="arc", outline=outline)
+                      small_side*0.801, small_side*0.6, start=10,
+                      extent=130, width=width, style="arc",
+                      outline=outline)
 
     canvas.create_line(small_side * 0.8, small_side*0.35,
-                       small_side*0.8, small_side*0.81, width=width, fill=outline)
+                       small_side*0.8, small_side*0.81,
+                       width=width, fill=outline)
 
     canvas.create_line(small_side * 0.6, small_side*0.5,
                        small_side*0.8, small_side*0.5, width=width, fill=outline)
 
     canvas.create_arc(small_side * 0.4, small_side*0.5,
-                      small_side*0.8, small_side*0.8, start=90, extent=180, width=width, style="arc", outline=outline)
+                      small_side*0.8, small_side*0.8,
+                      start=90, extent=180, width=width,
+                      style="arc", outline=outline)
 
     canvas.create_line(small_side * 0.6, small_side*0.8,
                        small_side*0.8, small_side*0.79, width=width, fill=outline)

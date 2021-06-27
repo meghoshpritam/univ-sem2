@@ -5,7 +5,7 @@ from tkinter import Tk, Canvas, Label
 def draw_oval(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#ffffff",
               outline="#E93B81", square_width=5):
     root = Tk()
-    root.title('Circle')
+    root.title('Oval')
 
     small_side = canvas_height if canvas_height < canvas_width else canvas_width
 
