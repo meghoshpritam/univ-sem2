@@ -24,7 +24,6 @@ public class Main {
     System.out.printf("Your name have %d charter\n", userName.length());
     System.out.printf("Your enter %d space in your name\n", userName.split(" ").length - 1);
 
-
     scanner.close();
   }
 }

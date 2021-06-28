@@ -34,7 +34,7 @@ public class Main {
     System.out.print("Multiplying, MatA" + matrix1.getRow() + "x" + matrix1.getCol());
     System.out.print(" X MatB" + matrix2.getRow() + "x" + matrix2.getCol());
     System.out.println(" started...");
-    
+
     long executionTimeThread = System.currentTimeMillis();
     Matrix mulThread = Matrix.multiplicationWithThread(matrix1, matrix2);
     executionTimeThread = System.currentTimeMillis() - executionTimeThread;
@@ -43,20 +43,20 @@ public class Main {
     Matrix mul = Matrix.multiplication(matrix1, matrix2);
     executionTime = System.currentTimeMillis() - executionTime;
 
-//    System.out.println("\nMatrix1::");
-//    matrix1.showMatrix();
-//    System.out.println("\nMatrix2::");
-//    matrix2.showMatrix();
+    // System.out.println("\nMatrix1::");
+    // matrix1.showMatrix();
+    // System.out.println("\nMatrix2::");
+    // matrix2.showMatrix();
 
     System.out.println("\nMatrix Multiplication with thread::");
-//    mulThread.showMatrix();
+    // mulThread.showMatrix();
     System.out.println("Time to execute using thread:: " + formatTime(executionTimeThread));
 
     System.out.println("\nMatrix Multiplication::");
-//    mul.showMatrix();
+    // mul.showMatrix();
     System.out.println("Time to execute:: " + formatTime(executionTime));
 
     totalRunningTime = System.currentTimeMillis() - totalRunningTime;
-    System.out.println("Time to execute:: " + formatTime(totalRunningTime));
+    System.out.println("Total time to execute:: " + formatTime(totalRunningTime));
   }
 }

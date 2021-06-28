@@ -18,9 +18,8 @@ class Consumer extends Thread {
       for (int idx = 0; idx < producer.getBuffer().length(); idx++) {
         System.out.println("Consumed: " + producer.getBuffer().charAt(idx));
       }
-      
+
       System.out.println("Buffer is Empty\n");
     }
   }
 }
-  

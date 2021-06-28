@@ -3,7 +3,7 @@ package Thread.ProducerConsumerProblem;
 class Producer extends Thread {
   private final StringBuffer buffer;
   private final int size;
-  
+
   Producer(int size) {
     this.size = size;
     buffer = new StringBuffer(size);

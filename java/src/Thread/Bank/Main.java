@@ -8,7 +8,7 @@ public class Main {
 
     user1.setName("User 1");
     user2.setName("User 2");
-    
+
     user1.start();
     user2.start();
   }

@@ -25,9 +25,11 @@ public class SynchronizedAccount implements Runnable {
       } catch (InterruptedException ignored) {
       }
       account.withdraw(amt);
-      System.out.println(Thread.currentThread().getName() + " completes the withdrawal, remaining balance: " + account.getBalance());
+      System.out.println(
+          Thread.currentThread().getName() + " completes the withdrawal, remaining balance: " + account.getBalance());
     } else {
-      System.out.println("Not enough in account for " + Thread.currentThread().getName() + " to withdraw, current balance: " + account.getBalance());
+      System.out.println("Not enough in account for " + Thread.currentThread().getName()
+          + " to withdraw, current balance: " + account.getBalance());
     }
   }
 }
