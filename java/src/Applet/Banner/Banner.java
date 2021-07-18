@@ -1,4 +1,4 @@
-package Applet;
+package Applet.Banner;
 
 import java.applet.Applet;
 import java.awt.Graphics;
