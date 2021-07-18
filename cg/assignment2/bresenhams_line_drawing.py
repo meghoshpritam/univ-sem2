@@ -1,31 +1,32 @@
-from base import Utils, Window
+from base import put_pixel, Window
 
 
-def put_pixel(canvas, x, y):
-    colors = Utils()
-    canvas.create_oval(x, y, x, y, width=5,
-                       fill=colors.white, outline=colors.primary)
-
-
-def bresenhams_linedrawing(canvas, x0, y0, x1, y1):
-    dx = x1-x0
-    dy = y1-y0
-
-    x = x0
-    y = y0
-
+def bresenhams_linedrawing(canvas, x1, y1, x2, y2):
+    dx = abs(x1-x2)
+    dy = abs(y1-y2)
     p = 2*dy-dx
 
-    while(x < x1):
-        if p >= 0:
-            put_pixel(canvas, x, y)
-            y = y+1
-            p = p+2*dy-2*dx
+    if x1 > x2:
+        x = x2
+        y = y2
+        end = x1
+    else:
+        x = x1
+        y = y1
+        end = x2
 
-        else:
-            put_pixel(canvas, x, y)
+    put_pixel(canvas, x, y)
+
+    while x <= end:
+        if p < 0:
+            x += 1
             p = p+2*dy
-        x = x+1
+        else:
+            x += 1
+            y += 1
+            p = p+2*(dy-dx)
+
+        put_pixel(canvas, x, y)
 
 
 if __name__ == "__main__":

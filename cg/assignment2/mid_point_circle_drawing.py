@@ -1,10 +1,4 @@
-from base import Utils, Window
-
-
-def put_pixel(canvas, x, y):
-    colors = Utils()
-    canvas.create_oval(x, y, x, y, width=5,
-                       fill=colors.white, outline=colors.primary)
+from base import put_pixel, Window
 
 
 def mid_point_circle_drawing(canvas, x0, y0, radius):

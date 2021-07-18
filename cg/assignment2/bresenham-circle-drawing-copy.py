@@ -1,10 +1,4 @@
-from base import Utils, Window
-
-
-def put_pixel(canvas, x, y):
-    colors = Utils()
-    canvas.create_oval(x, y, x, y, width=5,
-                       fill=colors.white, outline=colors.primary)
+from base import put_pixel, Window
 
 
 def bresenham_circle_drawing_copy(canvas, x0, y0, radius):
@@ -17,19 +11,19 @@ def bresenham_circle_drawing_copy(canvas, x0, y0, radius):
         put_pixel(canvas, y+xc, -x+yc)
         put_pixel(canvas, -y+xc, -x+yc)
         put_pixel(canvas, -y+xc, x+yc)
-   
+
     x = 0
-    y=radius
-    d=3-(2*radius)
-    draw(x0,y0,x,y);  
-  
-    while x<=y:
-        if d<=0:
-            d=d+(4*x)+6
-        else: 
-            d=d+(4*x)-(4*y)+10
-            y=y-1
-        x=x+1
+    y = radius
+    d = 3-(2*radius)
+    draw(x0, y0, x, y)
+
+    while x <= y:
+        if d <= 0:
+            d = d+(4*x)+6
+        else:
+            d = d+(4*x)-(4*y)+10
+            y = y-1
+        x = x+1
         draw(x0, y0, x, y)
 
 

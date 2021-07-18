@@ -1,30 +1,27 @@
-from base import Utils, Window
+from base import put_pixel, Window
 
-def put_pixel(canvas, x, y):
-    colors = Utils()
-    canvas.create_oval(x, y, x, y, width=5,
-                       fill=colors.white, outline=colors.primary)
 
-def dda_line_drawing(canvas, x0, y0, x1, y1):
-    dx = x1 - x0  
+def dda_line_drawing(canvas, x0, y0, x1, y1, color=None):
+    dx = x1 - x0
     dy = y1 - y0
     steps = dy
-    
-    if dx>=dy:
-        steps = dx  
-    
-    dx = dx/steps 
-    dy = dy/steps  
+
+    if dx >= dy:
+        steps = dx
+
+    dx = dx/steps
+    dy = dy/steps
     x = x0
-    y = y0  
+    y = y0
     i = 1
 
-    while i<= steps:
-        put_pixel(canvas, x, y)
+    while i <= steps:
+        put_pixel(canvas, x, y, outline=color)
         x += dx
         y += dy
         i = i+1
-    
+
+
 if __name__ == "__main__":
     window = Window(dda_line_drawing)
     window.set_title("DDA Line Drawing Algorithm")

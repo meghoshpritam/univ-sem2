@@ -1,6 +1,13 @@
 from tkinter import Tk, Canvas, Frame, Button, Entry, StringVar, Label
 
 
+class Helper():
+    @staticmethod
+    def string_to_coordinates(string_value, tranform_function=None):
+        _coordinates = string_value.split(',')
+        return [(tranform_function(_coordinates[idx])if tranform_function != None else int(_coordinates[idx]))for idx in range(len(_coordinates))]
+
+
 class Utils():
     def __init__(self):
         self.white = "#EDEDED"
@@ -81,6 +88,14 @@ class Window():
 
     def get_input_type(self):
         return self.return_type
+
+
+def put_pixel(canvas, x, y, outline=None):
+    colors = Utils()
+    if outline is None:
+        outline = colors.primary
+    canvas.create_oval(x, y, x, y, width=5,
+                       fill=colors.white, outline=outline)
 
 
 if __name__ == "__main__":
