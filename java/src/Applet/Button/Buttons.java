@@ -7,6 +7,8 @@ import java.awt.event.*;
 import Applet.Utils;
 
 public class Buttons extends Applet implements ActionListener {
+  Button button1, button2;
+  
   public void init() {
     button1 = new Button("Button 1");
     button1.setBackground(Utils.dark);
@@ -19,7 +21,6 @@ public class Buttons extends Applet implements ActionListener {
     button2.setForeground(Color.WHITE);
     add(button2);
     button2.addActionListener(this);
-    
   }
 
   public void actionPerformed(ActionEvent e) {
@@ -28,6 +29,4 @@ public class Buttons extends Applet implements ActionListener {
     else
       System.out.println("Button 2 was pressed");
   }
-
-  Button button1, button2;
 }

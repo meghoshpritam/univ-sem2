@@ -1,104 +1,58 @@
 package Applet.NationalFlag;
 
-
-import java.applet.Applet;
-import java.awt.RenderingHints;
-import java.awt.geom.AffineTransform;
+import java.applet.*;
 import java.awt.*;
 
-//import javax.swing.JFrame;
-  
 public class NationalFlag extends Applet {
-  //Main Method
-//  public static void main(String[] args)
-//  {
-//    Flag i =new Flag();
-//  }
 
-  //Costructor 
-//  public Flag()
-//  {
-//    setSize(1400, 750);
-//    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//    setLayout(null);
-//    setVisible(true);
-//  }
+  public void paint(Graphics fl) {
+    Color c1 = new Color(255, 140, 0);
+    Color c2 = new Color(139, 0, 0);
+    
+    fl.setColor(c2);
+    fl.fillRect(250, 100, 5, 400);
+    fl.setColor(Color.black);
+    fl.drawRect(250, 100, 5, 400);
+    
+    fl.setColor(c1);
+    fl.fillRect(255, 102, 180, 40);
+    fl.setColor(Color.black);
+    fl.drawRect(255, 102, 180, 40);
 
-  //Flag design 
-  public void paint(Graphics g)
-  {
-    Color saffron = new Color(255, 128, 0);
-    g.setColor(saffron);
-    g.fillRect(0, 0, 1400, 250);
+    fl.setColor(Color.WHITE);
+    fl.fillRect(255, 142, 180, 40);
+    fl.setColor(Color.black);
+    fl.drawRect(255, 142, 180, 40);
 
-    g.setColor(Color.white);
-    g.fillRect(0, 250, 1400, 250);
+    fl.setColor(Color.GREEN);
+    fl.fillRect(255, 182, 180, 40);
+    fl.setColor(Color.black);
+    fl.drawRect(255, 182, 180, 40);
+ 
+    Color c4 = new Color(173, 216, 230);
+    setBackground(c4);
 
-    g.setColor(Color.BLUE);
-    g.drawOval(600, 250, 250, 250);
+    int[] j = { 250, 245, 245, 225, 225, 280, 280, 260, 260, 255 };
+    int[] k = { 500, 500, 505, 505, 515, 515, 505, 505, 500, 500 };
+    fl.setColor(c2);
+    fl.fillPolygon(j, k, 10);
+    fl.setColor(Color.BLACK);
+    fl.drawPolygon(j, k, 10);
 
-    g.setColor(Color.green);
-    g.fillRect(0, 500, 1400, 250);
+    fl.setColor(Color.blue);
+    fl.drawOval(325, 142, 39, 39);
 
-    //Author :
-    g.setFont(new Font("", Font.BOLD, 15));
-    g.setColor(Color.RED);
-    g.drawString("@shivesh", 1250, 700);
-
-    // Ashoka Chakra design : All 24 spokes will display one after one 
-    int x = 600, y = 250;
-    int w = 250, h = 250;
-    int start = 90, arc = 5;
-
-    for (int i = 1; i <= 24; i++)
-    {
-      try
-      {
-        g.setColor(Color.BLUE);
-        g.fillArc(x, y, w, h, start, arc);
-        Thread.sleep(100);
-        start += 15;
-
-      }
-      catch (InterruptedException ex)
-      {
-        System.out.println(ex);
-      }
+    int n1 = 345;
+    int d1 = 162;
+    int r = 20;
+    double n2, d2,angle, line = 0.0;
+    
+    for (int i = 1; i <= 24; i++) {
+      angle = line * (3.14 / 180);
+      n2 = n1 + (double) r * Math.cos(angle);
+      d2 = d1 + (double) r * Math.sin(angle);
+      fl.drawLine(n1, d1, (int) n2, (int) d2);
+      line += 360 /(double) 24;
     }
-
-        /*
-        Code to print texts on Flag :
-        The text will appear with the mix color of Red and Yellow giving it an animated look.
-         .........
-        INDIA will be displayed in the centre of Saffron body.
-        JAI & HIND will be displayed on the Left & Right side of the Ashok chakra respectively at White body.
-        */
-    for (int i = 0; i < 10; i++)
-    {
-      try
-      {
-        g.setFont(new Font("", Font.BOLD, 100));
-        g.setColor(Color.red);
-        g.drawString("INDIA", 575, 190);
-        Thread.sleep(300);
-        g.setColor(Color.yellow);
-        g.drawString("INDIA", 575, 190);
-        Thread.sleep(300);
-        g.setColor(Color.YELLOW);
-        g.drawString("JAI", 250, 410);
-        g.drawString("HIND", 1000, 410);
-        Thread.sleep(200);
-        g.setColor(Color.RED);
-        g.drawString("JAI", 250, 410);
-        g.drawString("HIND", 1000, 410);
-        Thread.sleep(300);
-      }
-      catch (InterruptedException ex)
-      {
-        System.out.println(ex);
-      }
-    }
-
   }
-
 }
