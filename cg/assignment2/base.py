@@ -53,16 +53,12 @@ class Window():
         self.return_type = "string"
         self.utils = Utils()
 
-        self.utils.create_button(self.frame, "Exit", self.exit, row=4, col=0)
-        self.utils.create_button(
-            self.frame, "Draw", self.submit, row=4, col=1, type="primary")
-
         self.submit = submit
 
     def exit(self):
         self.root.destroy()
 
-    def submit(self):
+    def on_submit(self):
         self.canvas.destroy()
         self.canvas = Canvas(
             self.root, width=500, height=500, background='white')
@@ -82,6 +78,11 @@ class Window():
             self.vars.append(StringVar())
             self.utils.create_input(
                 self.frame, labels[idx], self.vars[idx], row=idx)
+
+        self.utils.create_button(
+            self.frame, "Exit", self.exit, row=len(labels), col=0)
+        self.utils.create_button(
+            self.frame, "Draw", self.on_submit, row=len(labels), col=1, type="primary")
 
     def set_input_type(self, return_type):
         self.return_type = return_type

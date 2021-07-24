@@ -1,5 +1,4 @@
 from transformation import Transformation
-from dda_line_drawing import dda_line_drawing
 from base import Helper, Utils, Window
 
 def draw_rectangle(canvas, coordinates, color):
