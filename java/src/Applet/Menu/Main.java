@@ -18,7 +18,7 @@ public class Main extends Frame {
     panel.add(label);
     add("Center", panel);
     addWindowListener(new WindowEventHandler());
-    menudetails();
+    menuDetails();
     setMenuBar(mb);
     pack();
     setSize(400, 400);
@@ -35,60 +35,60 @@ public class Main extends Frame {
     d.setVisible(false);
   }
 
-  void menudetails() {
-    Menu fmenu = new Menu("File");
-    Menu emenu = new Menu("Edit");
-    Menu hmenu = new Menu("Help");
-    Menu dmenu = new Menu("Dialog");
+  void menuDetails() {
+    Menu fMenu = new Menu("File");
+    Menu eMenu = new Menu("Edit");
+    Menu hMenu = new Menu("Help");
+    Menu dMenu = new Menu("Dialog");
     
-    MenuItem newfitem = new MenuItem("New");
-    MenuItem exitfitem = new MenuItem("Exit");
-    fmenu.add(newfitem);
-    fmenu.addSeparator();
-    fmenu.add(exitfitem);
+    MenuItem newFItem = new MenuItem("New");
+    MenuItem exitFItem = new MenuItem("Exit");
+    fMenu.add(newFItem);
+    fMenu.addSeparator();
+    fMenu.add(exitFItem);
     
-    MenuItem cuteitem = new MenuItem("Cut");
-    MenuItem copyitem = new MenuItem("Copy");
-    MenuItem pasteitem = new MenuItem("Paste");
-    CheckboxMenuItem refreshitem = new CheckboxMenuItem("Refresh", true);
-    emenu.add(cuteitem);
-    emenu.add(copyitem);
-    emenu.add(pasteitem);
-    emenu.addSeparator();
-    emenu.add(refreshitem);
+    MenuItem cuteItem = new MenuItem("Cut");
+    MenuItem copyItem = new MenuItem("Copy");
+    MenuItem pasteItem = new MenuItem("Paste");
+    CheckboxMenuItem refreshItem = new CheckboxMenuItem("Refresh", true);
+    eMenu.add(cuteItem);
+    eMenu.add(copyItem);
+    eMenu.add(pasteItem);
+    eMenu.addSeparator();
+    eMenu.add(refreshItem);
     
-    Menu sendmenu = new Menu("Send To");
-    MenuItem drivesitem = new MenuItem("Send to Drive");
-    MenuItem deskitem = new MenuItem("send to Desktop");
-    sendmenu.add(drivesitem);
-    sendmenu.add(deskitem);
-    emenu.add(sendmenu);
+    Menu sendMenu = new Menu("Send To");
+    MenuItem drivesItem = new MenuItem("Send to Drive");
+    MenuItem deskItem = new MenuItem("send to Desktop");
+    sendMenu.add(drivesItem);
+    sendMenu.add(deskItem);
+    eMenu.add(sendMenu);
     
-    MenuItem abouthitem = new MenuItem("About");
-    hmenu.add(abouthitem);
+    MenuItem aboutHItem = new MenuItem("About");
+    hMenu.add(aboutHItem);
     
     MenuItem dialogItem = new MenuItem("Open Dialog");
-    dmenu.add(dialogItem);
+    dMenu.add(dialogItem);
     
-    mb.add(fmenu);
-    mb.add(emenu);
-    mb.add(hmenu);
-    mb.add(dmenu);
+    mb.add(fMenu);
+    mb.add(eMenu);
+    mb.add(hMenu);
+    mb.add(dMenu);
     
-    Menuhandler mh = new Menuhandler();
-    newfitem.addActionListener(mh);
-    exitfitem.addActionListener(mh);
-    cuteitem.addActionListener(mh);
-    copyitem.addActionListener(mh);
-    pasteitem.addActionListener(mh);
-    refreshitem.addActionListener(mh);
-    drivesitem.addActionListener(mh);
-    deskitem.addActionListener(mh);
-    abouthitem.addActionListener(mh);
+    MenuHandler mh = new MenuHandler();
+    newFItem.addActionListener(mh);
+    exitFItem.addActionListener(mh);
+    cuteItem.addActionListener(mh);
+    copyItem.addActionListener(mh);
+    pasteItem.addActionListener(mh);
+    refreshItem.addActionListener(mh);
+    drivesItem.addActionListener(mh);
+    deskItem.addActionListener(mh);
+    aboutHItem.addActionListener(mh);
     dialogItem.addActionListener(mh);
   }
 
-  class Menuhandler implements ActionListener, ItemListener {
+  class MenuHandler implements ActionListener, ItemListener {
     public void actionPerformed(ActionEvent e) {
       String s = e.getActionCommand();
       label.setText(s);
