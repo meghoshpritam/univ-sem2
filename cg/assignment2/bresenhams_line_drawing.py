@@ -1,32 +1,54 @@
 from base import put_pixel, Window
 
 
-def bresenhams_linedrawing(canvas, x1, y1, x2, y2):
-    dx = abs(x1-x2)
-    dy = abs(y1-y2)
-    p = 2*dy-dx
+def bresenhams_linedrawing(canvas, x0, y0, x1, y1):
+    def plot_line_low(x0, y0, x1, y1):
+        dx = x1 - x0
+        dy = y1 - y0
+        yi = 1
+        if dy < 0:
+            yi = -1
+            dy = -dy
+        D = (2 * dy) - dx
+        y = y0
 
-    if x1 > x2:
-        x = x2
-        y = y2
-        end = x1
-    else:
-        x = x1
-        y = y1
-        end = x2
+        for x in range(x0, x1):
+            put_pixel(canvas, x,y)
+            if D > 0:
+                y = y + yi
+                D = D + (2 * (dy - dx))
+            else:
+                D = D + 2*dy
 
-    put_pixel(canvas, x, y)
+    
+    def plot_line_high(x0, y0, x1, y1):
+        dx = x1 - x0
+        dy = y1 - y0
+        xi = 1
+        if dx < 0:
+            xi = -1
+            dx = -dx
+        D = (2 * dx) - dy
+        x = x0
 
-    while x <= end:
-        if p < 0:
-            x += 1
-            p = p+2*dy
+        for y in range(y0, y1):
+            put_pixel(canvas,x, y)
+            if D > 0:
+                x = x + xi
+                D = D + (2 * (dx - dy))
+            else:
+                D = D + 2*dx
+
+    if abs(y1 - y0) < abs(x1 - x0):
+        if x0 > x1:
+           plot_line_low(x1, y1, x0, y0)
         else:
-            x += 1
-            y += 1
-            p = p+2*(dy-dx)
-
-        put_pixel(canvas, x, y)
+            plot_line_low(x0, y0, x1, y1)
+    else:
+        if y0 > y1:
+            plot_line_high(x1, y1, x0, y0)
+        else:
+            plot_line_high(x0, y0, x1, y1)   
 
 
 if __name__ == "__main__":

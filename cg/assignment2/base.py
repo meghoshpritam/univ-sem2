@@ -90,6 +90,16 @@ class Window():
     def get_input_type(self):
         return self.return_type
 
+    def initial(self, init_method):
+        init_method(self.canvas)
+
+    @staticmethod
+    def canvas_height_width(canvas):
+        canvas.update()
+        width = canvas.winfo_reqwidth()
+        height = canvas.winfo_reqheight()
+        return height, width
+
 
 def put_pixel(canvas, x, y, outline=None):
     colors = Utils()
@@ -97,6 +107,30 @@ def put_pixel(canvas, x, y, outline=None):
         outline = colors.primary
     canvas.create_oval(x, y, x, y, width=5,
                        fill=colors.white, outline=outline)
+
+
+def draw_axis(canvas, color="#F0F0F0", weight=2):
+    canvas.update()
+    width = canvas.winfo_reqwidth()
+    height = canvas.winfo_reqheight()
+
+    canvas.create_line((int)(width/2), 0, (int)(width/2),
+                       height, width=2, fill=color)
+    canvas.create_line(0, (int)(height/2), width,
+                       (int)(height/2), width=2, fill=color)
+
+
+def get_axis_coordinates(canvas, coordinates):
+    canvas.update()
+    width = canvas.winfo_reqwidth()
+    height = canvas.winfo_reqheight()
+    center = width*0.5, height*0.5
+
+    new_coordinates = []
+    for idx in range(0, len(coordinates), 2):
+        new_coordinates.append((int)(coordinates[idx]+center[0]))
+        new_coordinates.append((int)(-coordinates[idx+1]+center[1]))
+    return tuple(new_coordinates)
 
 
 if __name__ == "__main__":
