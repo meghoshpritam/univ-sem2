@@ -37,7 +37,7 @@ public class CheckBoxChoice extends Applet implements ItemListener {
     c1.setForeground(Utils.dark);
     c2.setForeground(Utils.dark);
     c3.setForeground(Utils.dark);
-    
+
     String selected = "";
     if (c1.getState()) {
       selected += "1";
@@ -58,4 +58,7 @@ public class CheckBoxChoice extends Applet implements ItemListener {
     selected += " Checkbox selected";
     l.setText(selected);
   }
-} 
+}
+
+// <applet code="Applet.CheckBoxChoice.CheckBoxChoice" width="500"
+// height="500"></applet>

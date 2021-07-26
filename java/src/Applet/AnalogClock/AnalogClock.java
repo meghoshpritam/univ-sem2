@@ -111,3 +111,6 @@ public class AnalogClock extends Applet implements Runnable {
     drawCircle(graphics, Utils.secondary, 4, (int) (width * 0.1), (int) (width * 0.1), (int) (width * 0.8), (int) (width * 0.8));
   }
 }
+
+// <applet code="Applet.AnalogClock.AnalogClock" width="500"
+// height="500"></applet>

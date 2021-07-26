@@ -9,7 +9,7 @@ public class Lists {
   private final Panel controlPanel;
 
   public Lists() {
-    mainFrame = new Frame("Java AWT Examples");
+    mainFrame = new Frame("Lists");
     mainFrame.setSize(400, 400);
     mainFrame.setLayout(new GridLayout(3, 1));
     mainFrame.addWindowListener(new WindowAdapter() {

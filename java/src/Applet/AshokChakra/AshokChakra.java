@@ -1,11 +1,11 @@
-package Applet.AshakChakra;
+package Applet.AshokChakra;
 
 import java.applet.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Ellipse2D;
 
-public class AshakChakra extends Applet {
+public class AshokChakra extends Applet {
   public void drawLine(Graphics graphics, int x1, int y1, int x2, int y2) {
     Graphics2D g2 = (Graphics2D) graphics;
     g2.setColor(Color.blue);
@@ -41,6 +41,6 @@ public class AshakChakra extends Applet {
 }
 
 /*
- * <applet code="Applet.AshakChakra.AshakChakra" width="600"
+ * <applet code="Applet.AshokChakra.AshokChakra" width="600"
  * height="600"></applet>
  */

@@ -88,3 +88,6 @@ public class DigitalClock extends Applet {
     graphics.setColor(Utils.primary);
   }
 }
+
+// <applet code="Applet.DigitalClock.DigitalClock" width="500"
+// height="500"></applet>

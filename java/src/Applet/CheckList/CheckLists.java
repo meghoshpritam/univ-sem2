@@ -59,3 +59,5 @@ public class CheckLists extends Applet implements ItemListener {
     }
   }
 } 
+
+// <applet code="Applet.CheckList.CheckLists" width="500" height="500"></applet>

@@ -56,3 +56,6 @@ public class NationalFlag extends Applet {
     }
   }
 }
+
+// <applet code="Applet.NationalFlag.NationalFlag" width="600"
+// height="600"></applet>

@@ -18,14 +18,14 @@ class AnotherFrame extends Frame {
 
 
 class WinAdapter extends WindowAdapter {
-  AnotherFrame sampleFrame;
+  AnotherFrame anotherFrame;
 
   public WinAdapter(AnotherFrame sampleFrame) {
-    this.sampleFrame = sampleFrame;
+    this.anotherFrame = sampleFrame;
   }
 
   public void windowClosing(WindowEvent we) {
-    sampleFrame.setVisible(false);
+    anotherFrame.setVisible(false);
   }
 }
 

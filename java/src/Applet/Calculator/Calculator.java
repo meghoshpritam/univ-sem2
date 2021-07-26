@@ -28,7 +28,7 @@ public class Calculator extends Applet implements ActionListener {
     dec.setBounds(200, 300, 50, 50);
     this.add(dec);
     dec.addActionListener(this);
-    
+
     Button clr = new Button("C");
     clr.setBounds(250, 300, 50, 50);
     this.add(clr);
@@ -44,7 +44,7 @@ public class Calculator extends Applet implements ActionListener {
     Button emptyBtn = new Button("");
     emptyBtn.setBounds(350, 150, 70, 150);
     this.add(emptyBtn);
-    
+
     for (i = 0; i < 4; i++) {
       operator[i].setBounds(300, 150 + (i * 50), 50, 50);
       this.add(operator[i]);
@@ -148,5 +148,6 @@ public class Calculator extends Applet implements ActionListener {
 }
 
 /*
-<applet code="Applet.Calculator.Calculator" width="600" height="600"></applet>
-*/
+ * <applet code="Applet.Calculator.Calculator" width="600"
+ * height="600"></applet>
+ */

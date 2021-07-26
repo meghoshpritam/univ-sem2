@@ -5,7 +5,7 @@ import Applet.Utils;
 import java.applet.Applet;
 import java.awt.*;
 
-public class RoundedRectangle extends Applet {
+public class Main extends Applet {
   public void drawRoundedRectangle(Graphics graphics, Color color, int x1, int y1, int x2, int y2) {
     Graphics2D g2 = (Graphics2D) graphics;
     g2.setColor(color);
@@ -20,3 +20,8 @@ public class RoundedRectangle extends Applet {
     
   }
 }
+
+/*
+ * <applet code="Applet.RoundedRectangle.Main" width="500"
+ * height="500"></applet>
+ */
