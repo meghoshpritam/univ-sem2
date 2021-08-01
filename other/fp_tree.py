@@ -1,4 +1,5 @@
 from csv import reader
+import time
 
 
 class Node:
@@ -55,7 +56,8 @@ def get_support_nic(item_sets, min_support, scaling_factor):
     return frequent_patterns_nis
 
 
-def create_tree(item_sets,  min_support, scaling_factor):
+def create_tree(item_sets,  min_support_ratio, scaling_factor):
+    min_support = len(item_sets)*min_support_ratio
     supports = get_support_nic(item_sets,  min_support, scaling_factor)
 
     tree = Node('Null', 1)
@@ -66,19 +68,23 @@ def create_tree(item_sets,  min_support, scaling_factor):
             key=lambda itm: supports[itm][1], reverse=True)
         for item in item_set:
             tree.add_child(item, 1)
-    tree.display()
-    prefix_trees(tree)
+    # tree.display()
+    # prefix_trees(tree)
+    return tree
+
 
 def prefix_trees(tree):
     prefix_tres = []
     if tree.children is not None:
         for idx in range(len(tree.children)):
-            new_tree = Node('Null',1)
+            new_tree = Node('Null', 1)
             for index in range(0, idx+1):
-                new_tree.add_child(tree.children[index].item_name, tree.children[index].count)
+                new_tree.add_child(
+                    tree.children[index].item_name, tree.children[index].count)
             prefix_tres.append(new_tree)
     for t in prefix_tres:
         t.display()
+
 
 def get_from_file(file_name):
     item_set_list = []
@@ -92,4 +98,8 @@ def get_from_file(file_name):
 
 
 if __name__ == '__main__':
-    create_tree(get_from_file('/home/computer/work/univ/other/dataset/testdb1.csv'), 1, 0.2)
+    start = time.time()
+    create_tree(get_from_file(
+        '/home/computer/work/univ/other/dataset/testdb1.csv'), 0.4, 0.4)
+
+    print('Time: ', time.time() - start)
