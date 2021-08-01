@@ -1,11 +1,10 @@
-# docs: https://tkdocs.com/tutorial/canvas.html
-from tkinter import Tk, Canvas, Label
+from tkinter import Tk, Canvas
 
 
-def alphabat_s(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#ffffff",
+def alphabat_S(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#ffffff",
                outline="#E93B81", width=5):
     root = Tk()
-    root.title('Alphabate - s')
+    root.title('Alphabet - s')
 
     small_side = canvas_height if canvas_height < canvas_width else canvas_width
 
@@ -23,4 +22,4 @@ def alphabat_s(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#
 
 
 if __name__ == "__main__":
-    alphabat_s()
+    alphabat_S()

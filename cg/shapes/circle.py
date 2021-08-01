@@ -1,5 +1,5 @@
 # docs: https://tkdocs.com/tutorial/canvas.html
-from tkinter import Tk, Canvas, Label
+from tkinter import Tk, Canvas
 
 
 def draw_circle(canvas_width=500, canvas_height=500, canvas_bg="#ffffff", fill="#ffffff",
