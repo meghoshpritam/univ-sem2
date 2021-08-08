@@ -1,4 +1,3 @@
-from fileinput import filename
 import time
 from fp_growth import construct_tree, get_from_file
 from fp_tree import create_tree, get_from_file as get_from_file2
