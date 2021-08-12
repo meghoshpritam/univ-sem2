@@ -4,9 +4,8 @@ package Applet.NightSky;
 
 import java.awt.*;
 import java.applet.*;
-import java.awt.event.*;
 
-public class Main extends Applet  {
+public class Main extends Applet {
   public void init() {
     this.setBackground(Color.BLACK);
   }
@@ -30,25 +29,13 @@ public class Main extends Applet  {
     {
       int appletWidth = getSize().width;
       int appletHeight = getSize().height;
-      int x = (int) (Math.random() * appletWidth - 30);
-      int y = (int) (Math.random() * appletHeight - 50);
+      int x = (int) (0.25 * appletWidth - 30);
+      int y = (int) (0.25 * appletHeight - 50);
       g.setColor(Color.WHITE);
       g.fillOval(x, y, 30, 30);
       g.setColor(Color.BLACK);
       g.fillOval(x + 7, y + 3, 30, 30);
     }
-
-//    {
-//      int appletWidth = getSize().width;
-//      int appletHeight = getSize().height;
-//      int x = (int) (Math.random() * appletWidth);
-//      int y = (int) (Math.random() * appletHeight);
-//      double draw = Math.random();
-//      if (draw < 0.3) {
-//        g.setColor(Color.RED);
-//        g.fillOval(x, y, 3, 3);
-//      }
-//    }
 
     {
       int appletWidth = getSize().width;
@@ -71,18 +58,18 @@ public class Main extends Applet  {
       }
     }
 
-//    {
-//      int column = 0;
-//      int appletWidth = getSize().width;
-//      int horizonHeight = 50;
-//      int appletHeight = getSize().height;
-//      while (column < appletWidth) {
-//        g.setColor(new Color(.53f, .76f, .34f));
-//        g.drawRect(column, (appletHeight - horizonHeight), 1, appletHeight);
-//
-//        column++;
-//        horizonHeight = horizonHeight + (int) (Math.random() * 3 - 1.5);
-//      }
-//    }
+    {
+      int column = 0;
+      int appletWidth = getSize().width;
+      int horizonHeight = 50;
+      int appletHeight = getSize().height;
+      while (column < appletWidth) {
+        g.setColor(new Color(.53f, .76f, .34f));
+        g.drawRect(column, (appletHeight - horizonHeight), 1, appletHeight);
+
+        column++;
+        horizonHeight = horizonHeight + (int) (Math.random() * 3 - 1.5);
+      }
+    }
   }
 }
